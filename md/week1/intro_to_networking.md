@@ -2,9 +2,7 @@
 
 ### What is a network
 
-A network is as basic as two computers connected together. It can be as complex as the entire internet, which is a huge collection of computers all connected to each other.
-
-At the most basic form, computers that are connected to each other form a network. The internet is a collection of networks that are connected together. For this lesson, we will be focusing on networks that are simple: a few nodes connected either directly to each other or with a switch (or hub).
+A network is any collection of computers connected to each other. At the most basic form, computers that are connected to each other form a network. The internet is a collection of networks that are connected together. For this lesson, we will be focusing on networks that are simple: a few nodes connected either directly to each other or with a switch (or hub).
 
 -- Here is where I would draw an example of a network using a few nodes and a single switch --
 
@@ -66,11 +64,11 @@ Translating this into decimal would look like this:
 
 We haven't talked about what a subnet is, but the basic idea is that it describes which computers are part of the local network vs computers which are part of an outside network. So if one node is trying to talk to another in the same subnet, it will talk to the other node directly, using the hardware address. We will do more with subnets and routing shortly.
 
-```
-Exercises!
 
-Have students take common numbers and convert them to binary and back. Also have them convert to and from hexadecimal.
-```
+#### Exercises!
+
+> Have students take common numbers and convert them to binary and back. Also have them convert to and from hexadecimal.
+
 
 
 ### Subnets and Broadcasts
