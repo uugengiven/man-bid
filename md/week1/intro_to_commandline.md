@@ -67,15 +67,56 @@ If you are unsure how to use a Powershell command, you can always use `Get-Help`
 
 There are commands that were written pre-Powershell that are still used in the shell. Small commands such as `ping` or more complex ones such as `netsh` are not Powershell commands but programs that run via the shell. They have command line interfaces and can be invoked via scripts. There are a collection of built in commands in Windows. Often specific commands are added by server software to help control the software via the command line.
 
+You will learn more about these commands as we go through the weeks.
 
+#### Filtering on Get
 
-###	Specific powershell commands
+We used filtering earlier when doing `Get-ChildItem` and `ls`. Filtering is an integral part of Powershell and it has its own syntax for more in-depth filtering than what we have done with `ls`.
 
- * 	Set networking info
+Powershell filtering is performed by piping your output to a `Where-Object` command. Inside this command, you can then set up your filter to only give the results that you want. Here is an example of a full statement:
 
- * 	Set computer info
+`Get-ChildItem | Where-Object {$_.name -eq test.txt }`
 
- *	Set file info
+This will list all files where the name is text.txt. This specific example isn't very useful, but the filter allows us to filter on more than just the name. The filter works like this:
+
+`Where-Object{ [object.property] -comparitor [value] }`
+
+Depending on the type of object, there can be any number of properties to compare against: name, date, date accessed, email address, group membership, size. The value can be any value that you want to compare against. Finally, the comparator is from a list of accepted Powershell comparisons, listed below:
+
+| Comparator | Meaning |
+| --- | --- |
+| -eq | The object property equals the value |
+| -ne | The object property is not equal to the value |
+| -lt | The object property is less than the value |
+| -gt | The object property is greater than the value |
+| -contains | The object property (as an array) includes the value |
+ | -like | The object property matches the value and the value can contain wildcards |
+
+There are many more comparison operators in Powershell but these are the basic and generally most useful ones.
+
+###	Specific Powershell commands
+
+Let's go through some common tasks you may do via Powershell.
+
+#### Set networking info
+
+To set an IP, Subnet, or other networking information, you'll need to use several commands to do so. First, you will need to get the adapter id for the network device you want to change. You can do that with `Get-NetAdapter`. This will list all of the network adapters on the machine you are on.
+
+Each adapter has an ifIndex, which is needed in the next step, where you can get or set the IP info.
+
+Use `Get-NetIPAddress -InterfaceIndex ` and then the ifIndex number to see what IP is already set to the machine. You can then use `Set-NetIPAddress` to change the IP, `New-NetIPAddress` to add another IP, or `Remove-NetIPAddress` to remove an existing IP.
+
+> Have students set a new IP and verify that it works, then remove that IP.
+
+#### Get computer info
+
+Powershell uses WMI (Windows Management Instrumentation) objects to look at machine hardware. There is a wealth of information available via WMI and it is important to see the basics of it.
+
+[WMI Reference](https://msdn.microsoft.com/en-us/library/aa394572(v=vs.85).aspx)
+
+> Have students find out how much space is left on their drives using WMI. The command they can use is something like: `Get-WMIObject win32_volume | fl driveletter, freespace`
+
+#### Set file info
 
 ###	Reading/Writing text files
 

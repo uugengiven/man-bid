@@ -1,10 +1,10 @@
 ## Week One ##
 
-[Week One][./week01/README.md] covers the basics of systems, networking, single machine permissions, and an intro into the command line.
+[Week One](./week01/README.md) covers the basics of systems, networking, single machine permissions, and an intro into the command line.
 
 ## Week Two ##
 
-[Week Two][./week02/README.md]
+[Week Two](./week02/README.md)
 
 ## Week Three ##
 
@@ -71,4 +71,3 @@ Linux Project - Creating an OpenStack environment
 Windows Project - Create a multisite domain with email and web hosting
 
 ## Externship ##
-
