@@ -1,12 +1,13 @@
 # Intro to networking
 
+> A note on words. Machine, Node, Server can all be used fairly interchangeably. I try to use Machine to mean the piece that runs the operating system. Node means any item on a network (which could include machine). Server means a specific program running on a machine that listens for and responds to request. At times I may mess this up but I will do my best not to.
+
 ### What is a network
 
 A network is any collection of computers connected to each other. At the most basic form, computers that are connected to each other form a network. The internet is a collection of networks that are connected together. For this lesson, we will be focusing on the most basic network: a few nodes connected either directly to each other or with a switch (or hub).
 
-```
-Here is where I would draw an example of a network using a few nodes and a single switch
-```
+> Here is where I would draw an example of a network using a few nodes and a single switch
+
 
 There have been several different protocols used for machines talking to each other. We will be focusing on what is used currently, TCP/IP. This is the backbone of what every network stack is built on, whether it is using physical wires to connect nodes or wireless to connect them.
 
@@ -101,9 +102,8 @@ This is also a simplification, because networks are both trees and circles, so r
 
 As I mentioned before, nodes talk to each other using IPs and MAC addresses. To understand how they talk when going across the WAN we will use the OSI model.
 
-```
-Draw/Explain the first 4 layers of the OSI model and how two machines on a local network then two machines across the WAN would send packets to each other
-```
+> Draw/Explain the first 4 layers of the OSI model and how two machines on a local network then two machines across the WAN would send packets to each other
+
 
 ### How do machines use IPs and Ports
 
@@ -125,6 +125,31 @@ There are several common ports that programs run on, although there is no defini
 | 53 | DNS |
 | 3389 | Remote Desktop |
 
+By default, Chrome or any web browser will request websites from port 80 or 443. You can override the default but it is there so there are fewer things for people to remember when typing in server addresses.
 
+Internally, a port a number that a program has reserved for itself to listen on. When a packet comes to a machine (via the MAC) and it is unpacked, the IP is then looked at. If the IP matches one of the IPs on the machine (and we're using TCP, assume we are), then the machine looks at the port to see which program that is running on the machine should get the packet. From there, the program will continue to unpack the packet until it gets the info that it needs.
 
 ### How can multiple server programs run on a single machines
+
+Because a machine can have multiple IPs and each IP has a set of over 65000 ports available, multiple server programs can run on a single machine. This can be done by moving the port, hosting on other IPs, or even putting some type of proxy in place that can look at incoming requests and route them to the correct program based on the info in the request.
+
+> Have students try to set up at least 2 different ways of hosting multiple servers on a machine. Minecraft is a pretty good server to use, since it is all Java based and has both IP and Port settings available in the server.properties file.
+
+
+### Common Network Services
+
+Most networks aren't set up fully manually, as we've been doing. There are several basic network services that most networks run. The two most basic are **DNS** and **DHCP**.
+
+#### DHCP
+
+**Dynamic Host Configuration Protocol** or **DHCP** is what networks use to automatically configure machines so they have network access. It normally will give out IP Addresses, Subnet information, gateway information and DNS settings. It can also be used to send more information as needed, such at network time info, IP telephony information or more.
+
+DHCP works by listening for broadcast packets on a subnet. When a DHCP server hears a broadcast packet for DHCPDISCOVERY it will offer an address to the machine. The machine then verifies the address with the DHCP server directly and if approved, the machine will then use the DHCP info given to it.
+
+#### DNS
+
+**Domain Name System** (ain't nobody use that name) or **DNS** is a network service that translates server names into IP addresses. This is also referred to as Name Resolution or DNS Resolver.
+
+Without a DNS server, everyone would have to remember every IP of every website they want to go to. This is not very useful, obviously.
+
+DNS is a much larger topic in the future. DNS is the backbone to almost every aspect of Microsoft Active Directory and is generally the first service to check when there is a network outage. We will dive more deeply into DNS in week two.
