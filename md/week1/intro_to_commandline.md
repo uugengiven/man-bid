@@ -116,8 +116,24 @@ Powershell uses WMI (Windows Management Instrumentation) objects to look at mach
 
 > Have students find out how much space is left on their drives using WMI. The command they can use is something like: `Get-WMIObject win32_volume | fl driveletter, freespace`
 
-#### Set file info
+#### Get file info
+
+We have used `Get-ChildItem` to get a list of items in a directory. We can also use `Get-Item` to get a single item. Using `Get-Item` by default only shows certain information. To see the full list of everything that `Get-Item` returns, add `| Format-List -property *` to see everything that is tracked on a file.
+
+You would then assume `Set-Item` would let you change these values. While `Set-Item` is a real command that does set values, it specifically is disabled when using files. Almost every other aspect of Powershell can use `Set-Item`, however.
 
 ###	Reading/Writing text files
 
+What if we wanted to read or write what is in a file then. Especially write a file if we can't use `Set-Item`. For that, we use `Set-Content` and `Get-Content`.
+
+> Have students create a text file using notepad. Have them print the contents of the file using `Get-Content`. Then have them put new text into the text file using, first replacing with `Set-Content` then by appending using `Add-Content`. Try to have students figure out how to append before explaining.
+
 ###	Powershell profiles
+
+As you become more comfortable with the command line and doing system work in general, customizing your workspace will become very important. Powershell has very nice customization available through your Powershell Profile. This profile lives in your documents folder, inside `%USER_PROFILE%\Documents\WindowsPowershell\Microsoft.Powershell_profile`
+
+By default, this file doesn't exist so nothing is loaded. If, however, you create the WindowsPowershell folder, then type in `notepad $profile` you will be taken to a blank profile that you can begin to fill in with useful variables and functions.
+
+We haven't yet gone over what variables and functions are in Powershell yet, but we will soon. In the meantime, let's walk through creating a function that will help us download files from Youtube.
+
+> Walk students through Get-YoutubeMP3 by using youtube-dl. This will require students to get youtube-dl working on their system and put it in a place that they can access. An example of Get-YoutubeMP3 is available at my [Github](https://github.com/uugengiven/PowershellProfile)

@@ -1,6 +1,6 @@
 ## Week One ##
 
-# Intro to Systems #
+# [Intro to Systems](intro_to_systems.md)
 
 ### What do servers do? ###
 
@@ -11,7 +11,7 @@
 ### Servers (Physical Hardware vs. Server Software)
 
 
-# Intro to networking
+# [Intro to networking](intro_to_networking.md)
 
 ### How do machines talk?
 
@@ -28,7 +28,7 @@
 ### Switches vs Routers
 
 
-# Basic Windows permissions
+# [Basic Windows permissions](basic_permissions.md)
 
 ###	Read, Write, Execute, Delete
 
@@ -41,7 +41,7 @@
 ###	Ownership
 
 
-# Intro to command line
+# [Intro to command line](intro_to_commanline.md)
 
 ###	Powershell basics
 

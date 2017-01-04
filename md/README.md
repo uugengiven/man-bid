@@ -1,6 +1,6 @@
 ## Week One ##
 
-[Week One](./week01/README.md) covers the basics of systems, networking, single machine permissions, and an intro into the command line.
+[Week One](./week01/outline.md) covers the basics of systems, networking, single machine permissions, and an intro into the command line.
 
 ## Week Two ##
 
