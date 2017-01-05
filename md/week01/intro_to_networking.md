@@ -1,6 +1,6 @@
 # Intro to networking
 
-> A note on words. Machine, Node, Server can all be used fairly interchangeably. I try to use Machine to mean the piece that runs the operating system. Node means any item on a network (which could include machine). Server means a specific program running on a machine that listens for and responds to request. At times I may mess this up but I will do my best not to.
+> A note on words. Machine, Node, Server can all be used fairly interchangeably. I try to use Machine to mean the piece that runs the operating system. This could be a Virtual Machine or physical hardware that is running a Hypervisor or physical hardware running an OS. Node means any item on a network (which could include machines). Server means a specific program running on a machine that listens for and responds to requests on a network. At times I may mess this up but I will do my best not to.
 
 ### What is a network
 
