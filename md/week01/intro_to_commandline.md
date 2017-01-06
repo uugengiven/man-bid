@@ -4,7 +4,7 @@ Throughout this course and your sys admin life, you will be in the command line 
 
 What is the command line? It is a text only program that you can use to run programs, change settings, make scripts, and do almost anything that you would need to do to keep machines up and running properly.  It is often the most concise and fastest way to look at and fix problems.
 
-However, the most important aspect of the command line that every command run here is repeatable on any other machine. Once a script is written and runs correctly, it should run on any other system that has the same OS/server software.
+However, the most important aspect of the command line is that every command run here is repeatable on any other machine. Once a script is written and runs correctly, it should run on any other system that has the same OS/server software.
 
 **Repeatability** is extremely important to system administrators, as it is what lets us actually do our jobs. If every machine we touch has unique settings then it is hard, if not impossible, to diagnose problems.
 
@@ -12,13 +12,13 @@ However, the most important aspect of the command line that every command run he
 
 What is Powershell? It is Microsoft's version of Bash. What is Bash? We'll cover that in two weeks...
 
-Powershell is a command environment that has a lot of built in commands along with the ability to create your own commands. It comes with the ability to declare variables, create loops, use arrays, build functions, and more. This will let us create logic within our scripts.
+Powershell is a command environment that has a lot of built-in commands along with the ability to create your own commands. It comes with the ability to declare variables, create loops, use arrays, build functions, and more. This will let us create logic within our scripts.
 
-Powershell, like other shell languages such as Bash, Powershell allows you to take the output of one command and pipe (**|**) it to another command. In this way, you could have Powershell get a list of files and pipe it to a command that will copy each of those files to a new directory. Or delete the files. Or put their name into a text file. It depends on what you want to do.
+Shell languages (like Bash and Powershell) also allow you to take the output of one command and pipe (**|**) it to another command. In this way, you could have Powershell get a list of files and pipe it to a command that will copy each of those files to a new directory. Or delete the files. Or put their name into a text file. It depends on what you want to do.
 
 ###	Folders – navigating, creating, deleting
 
-The first part of working within the shell environment is to begin navigating. When you are working in the shell, you are generally working within a folder on your machine. You can change which folder you are in and move around the contents of the computer much like you would by going through the file explorer.
+The first part of working within the shell environment is to begin navigating. When you are working in the shell, you are generally working within a folder on your machine. You can change which folder you are in and move around the contents of the computer much like you would by going through the file explorer, the graphical interface for seeing/navigating your files that most Windows users are used to.
 
 The basic commands for this are:
 
@@ -44,7 +44,7 @@ Filters can be separated by commas to include all files that meet at least one f
 
 `Get-ChildItem` can take multiple other parameters, but one very useful one is `-recurse`. Other commands will use this parameter as well. This will tell the command to look in the current folder and any subfolders that are inside the parent folder.
 
-> Have everyone list all pictures within their documents folder. Have them explain how they made sure to get each picture type and not include any non-pictures in their results
+> Have everyone list all pictures within their documents folder. Have them explain how they made sure to get each picture type and not include any non-pictures in their results.
 > Have them try to do other filters. See if anyone can filter to see all of the files on their system that are older than 10 days.
 
 ###	Files – create, delete, list
@@ -61,7 +61,7 @@ So far we've been using some of the basic Powershell commands (or **cmdlets** if
 
 The nouns are domain specific. This means that the words used for files and folders are different than the ones used for users which are different than the ones used for email. Each domain has its own set of nouns that are used. `Location` and `Item` are nouns used in files and folders. `ADUser` is a noun for usernames. `ActiveSyncMailboxPolicy` is a noun for email in Exchange.
 
-If you are unsure how to use a Powershell command, you can always use `Get-Help` for an explaination of the command and examples of how you can use it. Each Powershell command has its own help available. To see what is possible with `Get-ChildItem` you would type `Get-Help Get-ChildItem`.
+If you are unsure how to use a Powershell command, you can always use `Get-Help` for an explanation of the command and examples of how you can use it. Each Powershell command has its own help available. To see what is possible with `Get-ChildItem` you would type `Get-Help Get-ChildItem`.
 
 #### Non-Powershell Commands
 
@@ -79,7 +79,7 @@ Powershell filtering is performed by piping your output to a `Where-Object` comm
 
 This will list all files where the name is text.txt. This specific example isn't very useful, but the filter allows us to filter on more than just the name. The filter works like this:
 
-`Where-Object{ [object.property] -comparitor [value] }`
+`Where-Object{ [object.property] -comparator [value] }`
 
 Depending on the type of object, there can be any number of properties to compare against: name, date, date accessed, email address, group membership, size. The value can be any value that you want to compare against. Finally, the comparator is from a list of accepted Powershell comparisons, listed below:
 
@@ -90,7 +90,7 @@ Depending on the type of object, there can be any number of properties to compar
 | -lt | The object property is less than the value |
 | -gt | The object property is greater than the value |
 | -contains | The object property (as an array) includes the value |
- | -like | The object property matches the value and the value can contain wildcards |
+| -like | The object property matches the value and the value can contain wildcards |
 
 There are many more comparison operators in Powershell but these are the basic and generally most useful ones.
 
@@ -100,39 +100,39 @@ Let's go through some common tasks you may do via Powershell.
 
 #### Set networking info
 
-To set an IP, Subnet, or other networking information, you'll need to use several commands to do so. First, you will need to get the adapter id for the network device you want to change. You can do that with `Get-NetAdapter`. This will list all of the network adapters on the machine you are on.
+To set an IP, subnet, or other networking information, you'll need to use several commands. First, you will need to get the adapter ID for the network device you want to change. You can do that with `Get-NetAdapter`. This will list all of the network adapters on the machine you are on.
 
-Each adapter has an ifIndex, which is needed in the next step, where you can get or set the IP info.
+Each adapter has an `ifIndex` property, which is needed in the next step, where you can get or set the IP info.
 
-Use `Get-NetIPAddress -InterfaceIndex ` and then the ifIndex number to see what IP is already set to the machine. You can then use `Set-NetIPAddress` to change the IP, `New-NetIPAddress` to add another IP, or `Remove-NetIPAddress` to remove an existing IP.
+Use `Get-NetIPAddress -InterfaceIndex` and then the ifIndex number to see what IP is already set on the machine. You can then use `Set-NetIPAddress` to change the IP, `New-NetIPAddress` to add another IP, or `Remove-NetIPAddress` to remove an existing IP.
 
 > Have students set a new IP and verify that it works, then remove that IP.
 
 #### Get computer info
 
-Powershell uses WMI (Windows Management Instrumentation) objects to look at machine hardware. There is a wealth of information available via WMI and it is important to see the basics of it.
+Powershell uses WMI (Windows Management Instrumentation) objects to look at machine hardware. There is a wealth of information available via WMI and it is important to know how to see it.
 
 [WMI Reference](https://msdn.microsoft.com/en-us/library/aa394572(v=vs.85).aspx)
 
-> Have students find out how much space is left on their drives using WMI. The command they can use is something like: `Get-WMIObject win32_volume | fl driveletter, freespace`
+> Have students find out how much space is left on their drives using WMI. The command they can use is something like: `Get-WMIObject win32_volume | fl [drive letter], freespace`
 
 #### Get file info
 
-We have used `Get-ChildItem` to get a list of items in a directory. We can also use `Get-Item` to get a single item. Using `Get-Item` by default only shows certain information. To see the full list of everything that `Get-Item` returns, add `| Format-List -property *` to see everything that is tracked on a file.
+We have used `Get-ChildItem` to get a list of items in a directory. We can also use `Get-Item` to get a single item. Using `Get-Item` by default only shows certain information. To see the full list of everything that `Get-Item` returns, add `| Format-List -property *`. This will show you everything that is tracked on a file.
 
-You would then assume `Set-Item` would let you change these values. While `Set-Item` is a real command that does set values, it specifically is disabled when using files. Almost every other aspect of Powershell can use `Set-Item`, however.
+You might then assume `Set-Item` would let you change these values. While `Set-Item` is a real command that does set values, it specifically is disabled when using files. Almost every other aspect of Powershell can use `Set-Item`, however.
 
 ###	Reading/Writing text files
 
-What if we wanted to read or write what is in a file then. Especially write a file if we can't use `Set-Item`. For that, we use `Set-Content` and `Get-Content`.
+What if we wanted to read or write what is in a file? Especially, how do we write to a file if we can't use `Set-Item`? For that, we use `Set-Content` and `Get-Content`.
 
-> Have students create a text file using notepad. Have them print the contents of the file using `Get-Content`. Then have them put new text into the text file using, first replacing with `Set-Content` then by appending using `Add-Content`. Try to have students figure out how to append before explaining.
+> Have students create a text file using Notepad. Have them print the contents of the file using `Get-Content`. Then have them put new text into the text file, first replacing the existing text with `Set-Content`, then by appending using `Add-Content`. Try to have students figure out how to append before explaining.
 
 ###	Powershell profiles
 
 As you become more comfortable with the command line and doing system work in general, customizing your workspace will become very important. Powershell has very nice customization available through your Powershell Profile. This profile lives in your documents folder, inside `%USER_PROFILE%\Documents\WindowsPowershell\Microsoft.Powershell_profile`
 
-By default, this file doesn't exist so nothing is loaded. If, however, you create the WindowsPowershell folder, then type in `notepad $profile` you will be taken to a blank profile that you can begin to fill in with useful variables and functions.
+By default, this file doesn't exist, so nothing is loaded. If, however, you create the `WindowsPowershell` folder, then type in `notepad $profile` you will be taken to a blank profile that you can begin to fill in with useful variables and functions that Powershell will then have access to.
 
 We haven't yet gone over what variables and functions are in Powershell yet, but we will soon. In the meantime, let's walk through creating a function that will help us download files from Youtube.
 
