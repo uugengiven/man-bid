@@ -1,6 +1,6 @@
 # Intro to command line
 
-Throughout this course and your sys admin life, you will be in the command line all the time. After this course, you may be in the command line for most things that you do on your local computer too.
+Throughout this course and your sys admin life, you will be in the command line most of the time. After this course, you may be in the command line for most things that you do on your local computer too.
 
 What is the command line? It is a text only program that you can use to run programs, change settings, make scripts, and do almost anything that you would need to do to keep machines up and running properly.  It is often the most concise and fastest way to look at and fix problems.
 
