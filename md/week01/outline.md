@@ -41,7 +41,7 @@
 ###	Ownership
 
 
-# [Intro to command line](intro_to_commanline.md)
+# [Intro to command line](intro_to_commandline.md)
 
 ###	Powershell basics
 
