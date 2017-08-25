@@ -26,6 +26,19 @@ How does this work?
 
 > Explain how email software looks up where to send an email message when one is sent. Include the dns look up for the MX record, packaging the email into an understandable format for the receiving server, then contacting that server and pushing the email to it.
 
+`DNS` is designed to work like a tree. Each node has as many branches as needed. There are many common root nodes, such as `.com` or `.net` that you are probably familiar with. These are called *Top Level Domains*. This means that the `.com` node has branches for `google.com` and `microsoft.com` and `facebook.com` and any other .com name out there. From there, the `google.com` node may have other branches, such as `mail.google.com` or `docs.google.com` while the `microsoft.com` node may have separate branches, such as `onedrive.microsoft.com` or `xbox.microsoft.com` or even `www.microsoft.com`.
+
+The way this works is each node has a server responsible for answering DNS requests. And so, when you type www.facebook.com into Google Chrome, it will break each node out and ask, in order, to find the next hop, starting from the furthest right and moving left.
+
+ * Chrome requests a dns lookup for www.facebook.com
+ * The look up program goes for the first node, looking up the `com.` node first and getting the address of the `com.` name server
+ * The look up program then sends the second node name to the first node, asking for the `facebook.` name server and getting that address
+ * The look up program then sends the third node name to the second node address, asking for the `www.` **A Record** and getting that address (which is the final address)
+ * Chrome requests the index page from the address returned by the DNS query
+
+Because of the way DNS trees work, each domain has effectively unlimited numbers of subdomains as each node of the tree can act as a full name server if needed.
+
+
 
 ## WINS
 
