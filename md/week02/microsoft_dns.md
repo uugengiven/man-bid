@@ -50,4 +50,14 @@ Almost every part of Windows server configuration can be made in Powershell. DNS
 
 ## DNS Forwarders
 
-What happens when you make a DNS query to a server that does not own or know about a given domain.
+What happens when you make a DNS query to a server that does not own or know about a given domain? The DNS server needs to know which DNS server it should check for unknown domains. This works very much like a gateway in networking.
+
+Forwarders are specific DNS servers that are the next server to ask. Often these are the ISP DNS servers that the network is using. However, there are times when it makes sense to use other DNS forwarders.
+
+If no forwarders are set up, the DNS server will use the **root hints** that come pre-installed with Windows. These will generally work but best practice is to use a next hop DNS server to prevent the root servers from being overloaded with unnecessary requests.
+
+## Caching
+
+Most DNS servers, the Microsoft included, have caching built in. This means that any request that comes in that will be stored briefly so if other machines make requests to the same address, the DNS server can return the answer more quickly.
+
+Caching is an important part of making sure large scale networks can function quickly. Many services allow for caching, including DNS, web services, and more.

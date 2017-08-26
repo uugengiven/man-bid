@@ -104,6 +104,8 @@ As I mentioned before, nodes communicate with each other using IPs and MAC addre
 
 > Draw/Explain the first 4 layers of the OSI model and how two machines on a local network then two machines across the WAN would send packets to each other. A good way of explain is using the envelope analogy.
 
+> Make sure the Physical, Link, Network, and Transport layers are all well described.
+
 
 ### How do machines use IPs and Ports
 
