@@ -1,3 +1,5 @@
+Upon completion of this course/week, the student should be able to demonstrate at least average ability in the following areas:
+
 Basic Networking and DNS
  * Define non-routable IPs and give examples of such
  * Define BGP
