@@ -1,6 +1,6 @@
 ## Final projects
 
-### Windows - 1 week
+### Windows - 2 weeks
 Set up a 2-site domain
 * an internal website with SQL (use IIS)
 * Exchange
