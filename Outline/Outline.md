@@ -63,6 +63,9 @@ Guest speaker topics:
 Jean's additions (items that overlay everything):
 * Meet your neighbors
 * security
+  * Don't use admin accounts for non-admin work
+  * Don't put a new host on the Internet until it's secured. Once compromised, you can never be sure you've totally restored security to a host.
+  * Don't assume your security controls are working. Test them.
 
 ## Schedule
 24 total weeks.
