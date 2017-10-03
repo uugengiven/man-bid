@@ -15,7 +15,7 @@
 
 ### How do machines talk?
 
-### How do machines use IPs and Ports
+### How do machines use IP addresses and Ports
 
 ### How can multiple server programs run on a single machines
 
@@ -25,7 +25,7 @@
 
 ### Subnets and Broadcasts
 
-### Switches vs Routers
+### Switches vs. Routers
 
 
 # [Basic Windows permissions](basic_permissions.md)
@@ -34,9 +34,9 @@
 
 ###	Applying permissions in windows
 
-###	Permission groups vs users
+###	Permission groups vs. users
 
-###	Deny vs Allow
+###	Deny vs. Allow
 
 ###	Ownership
 
@@ -49,16 +49,16 @@
 
 ###	Files – create, delete, list
 
-###	Basic powershell commands
+###	Basic Powershell commands
 
-###	Specific powershell commands
+###	Specific Powershell commands
 
- * 	Set networking info
+* Set networking info
 
- * 	Set computer info
+* Set computer info
 
- *	Set file info
+* Set file info
 
-###	Reading/Writing text files
+###Reading/Writing text files
 
-###	Powershell profiles
+###Powershell profiles

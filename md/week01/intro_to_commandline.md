@@ -1,6 +1,6 @@
 # Intro to command line
 
-Throughout this course and your sys admin life, you will be in the command line most of the time. After this course, you may be in the command line for most things that you do on your local computer too.
+Throughout this course and your sysadmin life, you will use the command line most of the time. After this course, you may use the command line for most things that you do on your local computer, too.
 
 What is the command line? It is a text only program that you can use to run programs, change settings, make scripts, and do almost anything that you would need to do to keep machines up and running properly.  It is often the most concise and fastest way to look at and fix problems.
 
@@ -10,11 +10,11 @@ However, the most important aspect of the command line is that every command run
 
 ###	Powershell basics
 
-What is Powershell? It is Microsoft's version of Bash. What is Bash? We'll cover that in two weeks...
+What is Powershell? It is Microsoft's command language and environment, similar to Bash in Linux. What is Bash? We'll cover that in two weeks.
 
 Powershell is a command environment that has a lot of built-in commands along with the ability to create your own commands. It comes with the ability to declare variables, create loops, use arrays, build functions, and more. This will let us create logic within our scripts.
 
-Shell languages (like Bash and Powershell) also allow you to take the output of one command and pipe (**|**) it to another command. In this way, you could have Powershell get a list of files and pipe it to a command that will copy each of those files to a new directory. Or delete the files. Or put their name into a text file. It depends on what you want to do.
+Shell languages (like Bash and Powershell) also allow you to take the output of one command and pipe (**|**) it to another command. In this way, you could have Powershell get a list of files and pipe it to a command that will copy each of those files to a new directory. Or delete the files. Or put their names into a text file. It depends on what you want to do.
 
 ###	Folders – navigating, creating, deleting
 
@@ -22,29 +22,29 @@ The first part of working within the shell environment is to begin navigating. W
 
 The basic commands for this are:
 
-| Command | Aliases | Description|
-| --- | --- | --- |
-| `Get-ChildItem` | dir, ls | Get a list of all files and folders within a directory |
-| `Set-Location` | cd | Change directory or set the location in which your shell is running |
-| `Copy-Item` | cp, copy, cpi | Copy an item or items |
-| `Remove-Item` | del, rm | Delete an item or items |
-| `New-Item` | mkdir | Make an item or directory |
+| Command         | Aliases       | Description                              |
+| --------------- | ------------- | ---------------------------------------- |
+| `Get-ChildItem` | dir, ls       | Get a list of all files and folders within a directory |
+| `Set-Location`  | cd            | Change directory or set the location in which your shell is running |
+| `Copy-Item`     | cp, copy, cpi | Copy an item (e.g., file or folder) or items |
+| `Remove-Item`   | del, rm       | Delete an item or items                  |
+| `New-Item`      | mkdir         | Make an item or directory                |
 
-> Create a folder in your documents folder, then create a sub folder in this new folder. Then delete both folders. Move to the Windows/System32/drivers/etc folder and list all of the items there. Copy the hosts file to your desktop.
+> Create a folder in your Documents folder, then create a subfolder in this new folder. Then delete both folders. Move to the Windows/System32/drivers/etc folder and list all of the items there. Copy the hosts file to your Desktop.
 
-`Get-ChildItem`, or `ls`, as you will want to use the unix style commands as often as possible, can list anything in the current directory. It can also list a subset, by giving it a filter. This filter is added to the end to tell it which files you want to see. An asterisk is used as a wildcard in these filters.
+`Get-ChildItem`, or `ls`, as you will want to use the UNIX-style commands as often as possible, can list anything in the current directory. It can also list a subset, by giving it a filter. This filter is added to the end of the command to tell which files you want to see. An asterisk is used as a wildcard in these filters.
 
-| Filter | Result |
-| --- | --- |
-| `*.*` | All files with a . |
-| `d*` | All files that start with a d |
+| Filter  | Result                               |
+| ------- | ------------------------------------ |
+| `*.*`   | All files with a .                   |
+| `d*`    | All files that start with a d        |
 | `*.txt` | All files that have a .txt extension |
 
 Filters can be separated by commas to include all files that meet at least one filter definition. You could write `ls *.txt,*.docx` to get all of the text and Word files in a directory.
 
 `Get-ChildItem` can take multiple other parameters, but one very useful one is `-recurse`. Other commands will use this parameter as well. This will tell the command to look in the current folder and any subfolders that are inside the parent folder.
 
-> Have everyone list all pictures within their documents folder. Have them explain how they made sure to get each picture type and not include any non-pictures in their results.
+> Have everyone list all pictures within their Documents folder. Have them explain how they made sure to get each picture type and not include any non-pictures in their results.
 > Have them try to do other filters. See if anyone can filter to see all of the files on their system that are older than 10 days.
 
 ###	Files – create, delete, list
@@ -53,11 +53,11 @@ Files and folders are treated very similarly in Powershell. Both use `Get-ChildI
 
 All commands that output text can have that text saved to a file. This is done by piping to the `Out-File` command or using the short code `>` to do the same thing. This would look like `ls | Out-File sometext.txt` or `ls > sometext.txt`.
 
-> Create a new text document in the documents folder that holds a list of all image files in the documents folder.
+> Create a new text document in the Documents folder that holds a list of all image files in the documents folder.
 
 ###	Basic Powershell Commands
 
-So far we've been using some of the basic Powershell commands (or **cmdlets** if you're really into Powershell). There are more than I would want to list here but they all have a similar format. It is Verb-Noun. The Verbs are actions such as `get`, `set`, `remove`, `new`, `copy`, and so on. The verbs are somewhat universal. Whether you are working on a file, a user, or an email address, you will use commands such as `get` or `set`.
+So far we've been using some of the basic Powershell commands (or **cmdlets** if you're really into Powershell). There are more than I would want to list here, but their names all have a similar format. It is Verb-Noun. The Verbs are actions such as `get`, `set`, `remove`, `new`, `copy`, and so on. The verbs are somewhat universal. Whether you are working on a file, a user, or an email address, you will use commands such as `get` or `set`.
 
 The nouns are domain specific. This means that the words used for files and folders are different than the ones used for users which are different than the ones used for email. Each domain has its own set of nouns that are used. `Location` and `Item` are nouns used in files and folders. `ADUser` is a noun for usernames. `ActiveSyncMailboxPolicy` is a noun for email in Exchange.
 
@@ -65,7 +65,7 @@ If you are unsure how to use a Powershell command, you can always use `Get-Help`
 
 #### Non-Powershell Commands
 
-There are commands that were written pre-Powershell that are still used in the shell. Small commands such as `ping` or more complex ones such as `netsh` are not Powershell commands but programs that run via the shell. They have command line interfaces and can be invoked via scripts. There are a collection of built in commands in Windows. Often specific commands are added by server software to help control the software via the command line.
+There are commands that were written pre-Powershell that are still used in the shell. Small commands such as `ping` or more complex ones such as `netsh` are not Powershell commands but programs that run via the shell. They have command-line interfaces and can be invoked via scripts. There are a collection of built-in commands in Windows. Often specific commands are added by server software to help control the software via the command line.
 
 You will learn more about these commands as we go through the weeks.
 
@@ -81,18 +81,18 @@ This will list all files where the name is text.txt. This specific example isn't
 
 `Where-Object{ [object.property] -comparator [value] }`
 
-Depending on the type of object, there can be any number of properties to compare against: name, date, date accessed, email address, group membership, size. The value can be any value that you want to compare against. Finally, the comparator is from a list of accepted Powershell comparisons, listed below:
+Depending on the type of object, there can be any number of properties to compare against: name, date modified, date accessed, email address, group membership, size. The value can be any value that you want to compare against. Finally, the comparator is from a list of accepted Powershell comparisons, listed below:
 
-| Comparator | Meaning |
-| --- | --- |
-| -eq | The object property equals the value |
-| -ne | The object property is not equal to the value |
-| -lt | The object property is less than the value |
-| -gt | The object property is greater than the value |
-| -contains | The object property (as an array) includes the value |
-| -like | The object property matches the value and the value can contain wildcards |
+| Comparator | Meaning                                  |
+| ---------- | ---------------------------------------- |
+| -eq        | The object property equals the value     |
+| -ne        | The object property is not equal to the value |
+| -lt        | The object property is less than the value |
+| -gt        | The object property is greater than the value |
+| -contains  | The object property (as an array) includes the value |
+| -like      | The object property matches the value and the value can contain wildcards |
 
-There are many more comparison operators in Powershell but these are the basic and generally most useful ones.
+There are many more comparison operators in Powershell but these are the basic, and generally most useful, ones.
 
 ###	Specific Powershell commands
 
@@ -100,13 +100,13 @@ Let's go through some common tasks you may do via Powershell.
 
 #### Set networking info
 
-To set an IP, subnet, or other networking information, you'll need to use several commands. First, you will need to get the adapter ID for the network device you want to change. You can do that with `Get-NetAdapter`. This will list all of the network adapters on the machine you are on.
+To set an IP address, subnet, or other networking information, you'll need to use several commands. First, you will need to get the adapter ID for the network device you want to change. You can do that with `Get-NetAdapter`. This will list all of the network adapters on the machine you are on.
 
-Each adapter has an `ifIndex` property, which is needed in the next step, where you can get or set the IP info.
+Each adapter has an `ifIndex` (interface index) property, which is needed in the next step, where you can get or set the IP info.
 
-Use `Get-NetIPAddress -InterfaceIndex` and then the ifIndex number to see what IP is already set on the machine. You can then use `Set-NetIPAddress` to change the IP, `New-NetIPAddress` to add another IP, or `Remove-NetIPAddress` to remove an existing IP.
+Use `Get-NetIPAddress -InterfaceIndex` and then the ifIndex number to see what IP address is already set on the machine. You can then use `Set-NetIPAddress` to change the address, `New-NetIPAddress` to add another address, or `Remove-NetIPAddress` to remove an existing address.
 
-> Have students set a new IP and verify that it works, then remove that IP.
+> Have students set a new IP address and verify that it works, then remove that address.
 
 #### Get computer info
 
@@ -120,20 +120,20 @@ Powershell uses WMI (Windows Management Instrumentation) objects to look at mach
 
 We have used `Get-ChildItem` to get a list of items in a directory. We can also use `Get-Item` to get a single item. Using `Get-Item` by default only shows certain information. To see the full list of everything that `Get-Item` returns, add `| Format-List -property *`. This will show you everything that is tracked on a file.
 
-You might then assume `Set-Item` would let you change these values. While `Set-Item` is a real command that does set values, it specifically is disabled when using files. Almost every other aspect of Powershell can use `Set-Item`, however.
+You might then assume `Set-Item` would let you change these values. While `Set-Item` is a real command that does set values, it specifically is disabled when using files. Almost every other type of resource  (object) in Powershell can use `Set-Item`, however.
 
 ###	Reading/Writing text files
 
 What if we wanted to read or write what is in a file? Especially, how do we write to a file if we can't use `Set-Item`? For that, we use `Set-Content` and `Get-Content`.
 
-> Have students create a text file using Notepad. Have them print the contents of the file using `Get-Content`. Then have them put new text into the text file, first replacing the existing text with `Set-Content`, then by appending using `Add-Content`. Try to have students figure out how to append before explaining.
+> Have students create a text file using Notepad. Have them print the contents of the file using `Get-Content`. Then have them put new text into the text file, first replacing the existing text with `Set-Content`, then appending using `Add-Content`. Try to have students figure out how to append before explaining.
 
 ###	Powershell profiles
 
-As you become more comfortable with the command line and doing system work in general, customizing your workspace will become very important. Powershell has very nice customization available through your Powershell Profile. This profile lives in your documents folder, inside `%USER_PROFILE%\Documents\WindowsPowershell\Microsoft.Powershell_profile`
+As you become more comfortable with the command line and doing system work in general, customizing your workspace will become very important. Powershell has very nice customization available through your Powershell profile. This profile lives in your documents folder, inside `%USER_PROFILE%\Documents\WindowsPowershell\Microsoft.Powershell_profile`
 
-By default, this file doesn't exist, so nothing is loaded. If, however, you create the `WindowsPowershell` folder, then type in `notepad $profile` you will be taken to a blank profile that you can begin to fill in with useful variables and functions that Powershell will then have access to.
+By default, this file doesn't exist, so nothing is loaded. If, however, you create the `WindowsPowershell` folder in your Documents folder, then type in `notepad $profile` you will be taken to a blank profile that you can begin to fill in with useful variables and functions that Powershell will then have access to.
 
-We haven't yet gone over what variables and functions are in Powershell yet, but we will soon. In the meantime, let's walk through creating a function that will help us download files from Youtube.
+We haven't yet gone over what variables and functions are in Powershell, but we will soon. In the meantime, let's walk through creating a function that will help us download files from YouTube.
 
 > Walk students through Get-YoutubeMP3 by using youtube-dl. This will require students to get youtube-dl working on their system and put it in a place that they can access. An example of Get-YoutubeMP3 is available at my [Github](https://github.com/uugengiven/PowershellProfile)
