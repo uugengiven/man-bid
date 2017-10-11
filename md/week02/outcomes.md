@@ -1,9 +1,9 @@
 Upon completion of this course/week, the student should be able to demonstrate at least average ability in the following areas:
 
 ### Basic Networking and DNS
- * Define non-routable IPs and give examples of such
+ * Define non-routable IP addresses and give examples of such
  * Define BGP
- * Diagram a network that connects to the internet
+ * Diagram a network that connects to the Internet
  * Explain NAT
  * Define multiple types of DNS records
  * Define the use of DNS
@@ -22,6 +22,6 @@ Upon completion of this course/week, the student should be able to demonstrate a
 
 ### Basic Network Security and Firewalls
  * Define a firewall and its usage
- * Explain the difference between an allow and deny rule
- * Create rules to allow and deny specific Ports
- * Define a port translation rules
+ * Explain the difference between allow and deny rules
+ * Create rules to allow and deny specific ports
+ * Define port translation rules
