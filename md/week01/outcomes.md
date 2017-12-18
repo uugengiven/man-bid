@@ -10,14 +10,14 @@ Intro to Networking
  * Label the first four layers of the OSI model
  * Describe how packets go between machines on a LAN
  * Use CIDR notation to describe subnets
- * Define the usage of IPs and Ports
+ * Define the usage of IP addresses and Ports
 
 Basic Windows Permissions
- * Define the difference between Authentication and Authorization
+ * Define Authentication and Authorization
  * Apply permissions to files and folders in Windows via GUI
  * Apply permissions to files and folders in Windows via Powershell
- * Correctly recognize the correct permissions needed in a given scenario
- * Define Impersonation and describe a method it can be used
+ * Recognize the correct permissions needed in a given scenario
+ * Define Impersonation and describe a method for its use
 
 Intro to Command Line
  * Explain why Powershell and scripting is useful
