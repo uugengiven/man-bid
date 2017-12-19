@@ -1,3 +1,9 @@
+## Books for Reference
+ * Exam Ref 70-740: Installation, Storage, and Compute with Windows Server 2016
+ * Exam Ref 70-741: Networking with Windows Server 2016
+ * Exam Ref 70-742: Identity with Windows Server 2016
+ * Exam Ref 70-345: Designing and Deploying Microsoft Exchange Server 2016
+
 ## Final projects
 
 ### Windows - 2 weeks
@@ -85,27 +91,33 @@ Jean's additions (items that overlay everything):
 * Fileshares
 * Firewall basics
 
-### Week 3
+### Week 3 (Was 7)
+* Installing and configuring things in Linux
+* vi/emacs crash course
+* Users in default Linux
+* "Not everything needs 777"
+
+### Week 4
 * Windows domain
 * Group policy
 * Active Directory and AD user administration
 * IIS hosting
 * Intro to web hosting
 
-### Week 4
+### Week 5
 * Intro to DBs
   * SQL
   * Microsoft MySQL
 * Backups (Hallengren scripts)
 
-### Week 5
+### Week 6
 * Intro to mailing
   * Exchange
   * backup
 	* Activesync
 * Nebulous WSUS something
 
-### Week 6
+### Week 7
 * Troubleshooting/monitoring in Windows
   * Windows logging
 	* Event viewer
@@ -113,12 +125,6 @@ Jean's additions (items that overlay everything):
 	* Powershell stuff
 * Network troubleshooting
 * Setting up your Windows environment
-
-### Week 7
-* Installing and configuring things in Linux
-* vi/emacs crash course
-* Users in default Linux
-* "Not everything needs 777"
 
 ### Week 8
 * Apache/NGINX - webhosting in Linux
