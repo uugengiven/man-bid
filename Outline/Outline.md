@@ -57,6 +57,7 @@ John's list:
 	* Postgres/MySQL
 * Mail servers
 * Web hosting
+* Git (specifically for docker)
 
 Guest speaker topics:
 * git
@@ -98,11 +99,12 @@ Jean's additions (items that overlay everything):
 * "Not everything needs 777"
 
 ### Week 4
+* Installing Windows
 * Windows domain
 * Group policy
 * Active Directory and AD user administration
-* IIS hosting
 * Intro to web hosting
+ * IIS Web Hosting
 
 ### Week 5
 * Intro to DBs
@@ -110,14 +112,24 @@ Jean's additions (items that overlay everything):
   * Microsoft MySQL
 * Backups (Hallengren scripts)
 
-### Week 6
+### Week 6 (was 8)
+* Apache/NGINX - webhosting in Linux
+* Postgres OR MySQL - DBs in Linux
+* Linux DNS
+
+### Week 7
 * Intro to mailing
   * Exchange
   * backup
 	* Activesync
 * Nebulous WSUS something
 
-### Week 7
+### Week 8
+* SendMail
+* Other DB - whichever one didn't happen in week 6
+* Troubleshooting/monitoring in Linux
+
+### Week 9
 * Troubleshooting/monitoring in Windows
   * Windows logging
 	* Event viewer
@@ -125,16 +137,6 @@ Jean's additions (items that overlay everything):
 	* Powershell stuff
 * Network troubleshooting
 * Setting up your Windows environment
-
-### Week 8
-* Apache/NGINX - webhosting in Linux
-* Postgres OR MySQL - DBs in Linux
-* Linux DNS
-
-### Week 9
-* SendMail
-* Other DB - whichever one didn't happen in week 8
-* Troubleshooting/monitoring in Linux
 
 ### Week 10
 * Intro to containers
@@ -161,9 +163,17 @@ Jean's additions (items that overlay everything):
 
 ### Week 14
 * Road to OpenStack (RESEARCH NEEDED)
+ * https://docs.openstack.org/devstack/latest/
+ * Install and use devstack for administration of OpenStack
 
 ### Week 15
 * Build out Azure with design toward OpenStack
+ * Create Azure VMs/Containers to run workloads
+ * Add SQL in Azure
+ * Setup Azure AD
 
 ### Week 16
 * OpenStack deep dive
+ * https://docs.openstack.org/newton/install-guide-ubuntu/
+ * Full install of openstack, walk through and hands on with instructor
+ * Configuration and additional administration tasks
